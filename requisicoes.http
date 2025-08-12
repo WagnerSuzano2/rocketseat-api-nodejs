@@ -1,0 +1,19 @@
+# Variables
+@baseUrl = http://localhost:3333
+
+### Listar todos os cursos
+GET {{baseUrl}}/courses
+
+
+### Listar um curso específico
+GET {{baseUrl}}/courses/1
+
+
+### Criar um novo curso
+POST {{baseUrl}}/courses
+Content-Type: application/json
+
+{
+  "title": "Curso de Testes",
+  "description": "Curso sobre testes automatizados"
+}

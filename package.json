@@ -1,0 +1,30 @@
+{
+  "name": "rocketseat-api-nodejs",
+  "version": "1.0.0",
+  "description": "Repositório do projeto \"Sua Primeira API com Node.js\" da Rocketseat. Uma API RESTful construída com Node.js, TypeScript e Express, com integração de banco de dados PostgreSQL via Docker, testes automatizados e documentação com Swagger",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WagnerSuzano2/rocketseat-api-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WagnerSuzano2/rocketseat-api-nodejs/issues"
+  },
+  "homepage": "https://github.com/WagnerSuzano2/rocketseat-api-nodejs#readme",
+  "dependencies": {
+    "fastify": "^5.5.0",
+    "pino-pretty": "^13.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
+}
