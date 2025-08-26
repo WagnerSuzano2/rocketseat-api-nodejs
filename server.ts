@@ -1,8 +1,10 @@
-//const fastify = require("fastify"); para js
-//const crypton = require("crypto"); para js
-
 import fastify from "fastify";
-import crypton from "node:crypto";
+import { fastifySwagger } from "@fastify/swagger";
+import { validatorCompiler, serializerCompiler, type ZodTypeProvider, jsonSchemaTransform } from "fastify-type-provider-zod";
+import { getCoursesRoute } from "./src/routes/get-courses.ts";
+import { createCourseRoute } from "./src/routes/create-course.ts";
+import { getCourseByIdRoute } from "./src/routes/get-course-by-id.ts";
+import scalarAPIReference from "@scalar/fastify-api-reference"
 
 const server = fastify({
   logger:{
@@ -14,70 +16,32 @@ const server = fastify({
       },
     }
   }
-});
+}).withTypeProvider<ZodTypeProvider>();
 
-const courses = [
-  {
-    id: "1",
-    title: "Curso de Node.js",
-    description: "Descrição do Curso de Node.js",
+if(process.env.NODE_ENV === "development"){
+server.register(fastifySwagger, {
+  openapi: {
+    info: {
+      title: 'Desafio Node.js',
+      description: 'Uma API RESTful construída com Node.js',
+      version: '1.0.0',
+    },
   },
-  {
-    id: "2",
-    title: "Curso de React.js",
-    description: "Descrição do Curso de React.js",
-  },
-  {
-    id: "3",
-    title: "Curso de Vue.js",
-    description: "Descrição do Curso de Vue.js",
-  },
-];
-
-server.get("/courses", () => {
-  return { courses };
+  transform: jsonSchemaTransform,
 });
 
-server.get("/courses/:id", (request, reply) => {
-  type Params = {
-    id: string;
-  };
-
-  const params = request.params as Params;
-  const courseId = params.id;
-
-  const course = courses.find((course) => course.id === courseId);
-
-  if (course) {
-    return { course };
-  }
-
-  return reply.status(404).send({ message: "Course not found" });
+server.register(scalarAPIReference, {
+  routePrefix: '/docs',
 });
+}
 
-server.post("/courses", (request, reply) => {
-  type Body = {
-    title: string;
-    description: string;
-  };
 
-  const body = request.body as Body;
+server.setValidatorCompiler(validatorCompiler);
+server.setSerializerCompiler(serializerCompiler);
 
-  const { title, description } = body;
-  const courseId = crypton.randomUUID();
-
-  if (!title) {
-    return reply.status(400).send({ message: "Course title is required" });
-  }
-  
-  courses.push({
-    id: courseId,
-    title,
-    description,
-  });
-
-  return reply.status(201).send({ id: courseId });
-});
+server.register(createCourseRoute);
+server.register(getCoursesRoute);
+server.register(getCourseByIdRoute);
 
 server.listen({ port: 3333 }).then(() => {
   console.log("HTTP Server running");

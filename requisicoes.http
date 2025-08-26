@@ -6,7 +6,7 @@ GET {{baseUrl}}/courses
 
 
 ### Listar um curso específico
-GET {{baseUrl}}/courses/1
+GET {{baseUrl}}/courses/54ea161a-7b64-4d5f-93a1-d449c0c0ae21
 
 
 ### Criar um novo curso
@@ -14,6 +14,6 @@ POST {{baseUrl}}/courses
 Content-Type: application/json
 
 {
-  "title": "Curso de Testes",
-  "description": "Curso sobre testes automatizados"
+  "title": "Curso de Banco de dados",
+  "description": "Curso sobre bancos de dados relacionais"
 }
