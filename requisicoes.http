@@ -2,18 +2,17 @@
 @baseUrl = http://localhost:3333
 
 ### Listar todos os cursos
-GET {{baseUrl}}/courses
+GET {{baseUrl}}/courses?orderBy=title&page=1
 
 
 ### Listar um curso específico
-GET {{baseUrl}}/courses/54ea161a-7b64-4d5f-93a1-d449c0c0ae21
-
+GET {{baseUrl}}/courses/099a6910-b14d-4a9e-bf34-6119ca0d0472
 
 ### Criar um novo curso
 POST {{baseUrl}}/courses
 Content-Type: application/json
 
 {
-  "title": "Curso de Banco de dados",
-  "description": "Curso sobre bancos de dados relacionais"
+  "title": "Curso de Banco de Java",
+  "description": "Curso completo de Java com banco de dados"
 }
