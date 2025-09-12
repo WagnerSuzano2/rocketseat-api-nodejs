@@ -1,6 +1,5 @@
 NODE_ENV=development
 node_modules
-package-lock.json
 
 # Logs
 logs
