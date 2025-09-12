@@ -4,7 +4,7 @@
 #
 
 app = 'rocketseat-api-nodejs'
-primary_region = 'gig'
+primary_region = 'gru'
 
 [build]
 
@@ -13,7 +13,7 @@ primary_region = 'gig'
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
-  min_machines_running = 4
+  min_machines_running = 2
   processes = ['app']
 
 [[vm]]
