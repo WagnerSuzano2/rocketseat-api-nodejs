@@ -36,6 +36,13 @@
       "when": 1757558018292,
       "tag": "0004_wide_firebrand",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1757619502412,
+      "tag": "0005_yellow_magdalene",
+      "breakpoints": true
     }
   ]
 }

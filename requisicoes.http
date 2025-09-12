@@ -6,13 +6,24 @@ GET {{baseUrl}}/courses?orderBy=title&page=1
 
 
 ### Listar um curso específico
-GET {{baseUrl}}/courses/099a6910-b14d-4a9e-bf34-6119ca0d0472
+GET {{baseUrl}}/courses/8b6193e9-d7c8-4866-b6e6-b8b703afbc95
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkMWU2OWJkMS05YzQ3LTQ0NjctYTk4ZS04ZjA0YjgzMTk1NTciLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc1NzYzNTI3M30.HEvMACSXyyoAFazu-CPCdFqJ9h0h_xdVVfESe4t5N6I
 
 ### Criar um novo curso
 POST {{baseUrl}}/courses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkMWU2OWJkMS05YzQ3LTQ0NjctYTk4ZS04ZjA0YjgzMTk1NTciLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1NzY0MDcwNX0.RIt4Gftr6Uyj3GZFhCSb6LJ3JieO69awgUTB_s2AHck
 
 {
-  "title": "Curso de Banco de Java",
+  "title": "Curso de Banco de Dados com Java",
   "description": "Curso completo de Java com banco de dados"
+}
+
+### Login de usuário
+POST {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "email": "Julia.Martins88@live.com",
+  "password": "123456"
 }
