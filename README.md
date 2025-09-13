@@ -14,10 +14,10 @@ A API foi construída com um foco em arquitetura robusta, seguindo as melhores p
 
 ### Funcionalidades
 
--   **Autenticação de Usuário** (`POST /sessions`): Login de usuário com validação de credenciais e geração de JWT.
--   **Gerenciamento de Cursos** (`POST`, `GET`): Rotas para criar, listar e buscar cursos por ID.
--   **Busca, Paginação e Ordenação**: Funcionalidades avançadas para filtrar, ordenar e paginar a lista de cursos.
--   **Documentação Interativa**: Documentação da API gerada automaticamente com **Swagger** e **Scalar**.
+- **Autenticação de Usuário** (`POST /sessions`): Login de usuário com validação de credenciais e geração de JWT.
+- **Gerenciamento de Cursos** (`POST`, `GET`): Rotas para criar, listar e buscar cursos por ID.
+- **Busca, Paginação e Ordenação**: Funcionalidades avançadas para filtrar, ordenar e paginar a lista de cursos.
+- **Documentação Interativa**: Documentação da API gerada automaticamente com **Swagger** e **Scalar**.
 
 ---
 
@@ -25,12 +25,12 @@ A API foi construída com um foco em arquitetura robusta, seguindo as melhores p
 
 As seguintes tecnologias foram utilizadas na construção do projeto:
 
--   **Back-end:** `Node.js`, `Fastify`, `TypeScript`
--   **Banco de Dados:** `PostgreSQL` (Docker e Neon)
--   **ORM:** `Drizzle ORM` (`drizzle-kit`)
--   **Validação:** `Zod`
--   **Autenticação:** `argon2`, `jsonwebtoken`
--   **Testes:** `Vitest`, `Supertest`, `@faker-js/faker` (para dados de teste)
+- **Back-end:** `Node.js`, `Fastify`, `TypeScript`
+- **Banco de Dados:** `PostgreSQL` (Docker e Neon)
+- **ORM:** `Drizzle ORM` (`drizzle-kit`)
+- **Validação:** `Zod`
+- **Autenticação:** `argon2`, `jsonwebtoken`
+- **Testes:** `Vitest`, `Supertest`, `@faker-js/faker` (para dados de teste)
 
 ---
 
@@ -38,37 +38,40 @@ As seguintes tecnologias foram utilizadas na construção do projeto:
 
 ### Pré-requisitos
 
--   `Node.js` (v22.x ou superior)
--   `Docker` e `Docker Compose`
--   `npm`
+- `Node.js` (v22.x ou superior)
+- `Docker` e `Docker Compose`
+- `npm`
 
 ### Passos
 
 1.  Clone o repositório:
-    
-    * Clone o repositório e acesse a pasta do projeto.
-    
+
+    - Clone o repositório e acesse a pasta do projeto.
 
 2.  Instale as dependências:
+
     ```bash
     npm install
     ```
 
 3.  Configure o banco de dados localmente:
-    * Crie um arquivo `.env` na raiz do projeto.
-    * Defina a URL do seu banco de dados local e a chave secreta JWT.
-    
+
+    - Crie um arquivo `.env` na raiz do projeto.
+    - Defina a URL do seu banco de dados local e a chave secreta JWT.
+
     ```env
     DATABASE_URL="postgresql://postgres:postgres@localhost:5432/desafio"
     JWT_SECRET="sua_chave_secreta_aqui"
     ```
 
 4.  Inicie o banco de dados com Docker:
+
     ```bash
     docker-compose up -d
     ```
 
 5.  Aplique as migrações do banco de dados para criar as tabelas:
+
     ```bash
     npm run db:migrate
     ```
@@ -95,8 +98,11 @@ Para rodar os testes de integração do projeto:
 ```bash
 npm run test
 ```
+
 ---
+
 ## Scripts
+
 - `npm run dev`: inicia o servidor com reload e carrega variáveis de `.env`
 - `npm run db:generate`: gera artefatos do Drizzle a partir do schema
 - `npm run db:migrate`: aplica migrações no banco
