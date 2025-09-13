@@ -107,3 +107,6 @@ npm run test
 - `npm run db:generate`: gera artefatos do Drizzle a partir do schema
 - `npm run db:migrate`: aplica migrações no banco
 - `npm run db:studio`: abre o Drizzle Studio
+
+## Licença
+ISC (ver `package.json`).
